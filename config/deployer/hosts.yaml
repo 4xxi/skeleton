@@ -1,0 +1,12 @@
+dev:
+    hostname: domain.com                    # Replace with proper domain
+    deploy_path: /var/www/domain.com        # Replace with proper deploy path
+    branch: develop
+    user: deploy
+    stage: dev
+#prod:
+#    hostname: domain.com                   # Replace with proper domain
+#    deploy_path: /var/www/domain.com       # Replace with proper deploy path
+#    branch: master
+#    user: deploy
+#    stage: prod
