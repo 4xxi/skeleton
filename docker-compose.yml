@@ -1,0 +1,36 @@
+version: '3.2'
+
+services:
+    php:
+        build: ./config/docker/php
+        depends_on:
+            - db
+        volumes:
+            - .:/var/www/html
+        expose:
+            - "9000"
+        entrypoint: ./config/docker/docker-entrypoint.sh
+        environment:
+            - APP_ENV
+            - DATABASE_URL
+    nginx:
+        image: 4xxi/nginx:flex
+        depends_on:
+            - php
+        ports:
+            - "${SERVER_HTTP_PORT}:80"
+        volumes:
+            - .:/var/www/html
+            - ./var/log:/var/log/nginx
+    db:
+        image: postgres:9
+        ports:
+            - "5432:5432"
+        volumes:
+            - db:/var/lib/postgresql/data
+        environment:
+            - POSTGRES_DB
+            - POSTGRES_USER
+            - POSTGRES_PASSWORD
+volumes:
+    db:

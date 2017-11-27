@@ -1,0 +1,12 @@
+version: "2"
+
+options:
+    compose-dev-file-path: 'docker-compose-sync.yml'
+syncs:
+    project_name-data-sync:                                    # Replace project_name with the name of your project
+        src: './'
+        host_disk_mount_mode: 'cached'
+        sync_excludes:
+            - '.git'
+            - '.idea'
+            - 'var/cache/*'
