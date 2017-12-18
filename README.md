@@ -87,6 +87,22 @@ your project.
 * [Docker and Docker Compose](https://docs.docker.com/engine/installation)
 * [MacOS Only]: Docker Sync (run `gem install docker-sync` to install it)
 
+## Configuration
+
+Application configuration is stored in `.env` file. 
+
+### HTTP port
+If you have nginx or apache installed and using 80 port on host system you could either stop them before proceeding or 
+reconfigure Docker to use another port by changing value of `SERVER_HTTP_PORT` in `.env` file.
+
+### Application environment
+You can change application environment to `dev` of `prod` by changing `APP_ENV` variable in `.env` file.
+
+### DB name and credentials
+DB name and credentials could by reconfigured by changing variables with `POSTGRES` prefix in `.env` file. It is 
+recommended to restart containers after changing these values (new database will be automatically created on containers 
+start).
+
 ## Installation
 
 ### 1. Start Containers and install dependencies 
