@@ -3,12 +3,11 @@
     "type": "project",
     "license": "proprietary",
     "require": {
-        "php": "^7.1",
+        "php": "^7.1.3",
         "ext-iconv": "*",
         "sensio/framework-extra-bundle": "^5.0",
         "sensiolabs/security-checker": "^4.1",
         "symfony/console": "^3.4",
-        "symfony/dotenv": "^3.4",
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^3.4",
         "symfony/lts": "^3",
@@ -20,6 +19,7 @@
         "deployer/deployer": "^6.0",
         "friendsofphp/php-cs-fixer": "^2.8",
         "symfony/debug-pack": "^1.0",
+        "symfony/dotenv": "^3.4",
         "symfony/maker-bundle": "^1.0"
     },
     "config": {
@@ -39,7 +39,7 @@
         }
     },
     "replace": {
-        "symfony/polyfill-apcu": "*",
+        "symfony/polyfill-iconv": "*",
         "symfony/polyfill-php70": "*",
         "symfony/polyfill-php56": "*"
     },

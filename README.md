@@ -92,7 +92,7 @@ your project.
 Application configuration is stored in `.env` file. 
 
 ### HTTP port
-If you have nginx or apache installed and using 80 port on host system you could either stop them before proceeding or 
+If you have nginx or apache installed and using 80 port on host system you can either stop them before proceeding or 
 reconfigure Docker to use another port by changing value of `SERVER_HTTP_PORT` in `.env` file.
 
 ### Application environment
