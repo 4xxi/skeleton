@@ -25,7 +25,7 @@ Creating new project
 
 Creating new project with 4xxi Symfony Skeleton is as easy as running
 ```bash
-composer create-project symfony/skeleton <project_name> --repository='{"type":"git","url":"git@bitbucket.org:4xxi/symfony-skeleton.git"}' 
+composer create-project 4xxi/skeleton <project_name> 
 ```
 where `<project_name>` is the directory where you want to setup a new project. New project is ready for development 
 immediately after this step.
