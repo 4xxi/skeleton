@@ -10,9 +10,6 @@ services:
         expose:
             - "9000"
         entrypoint: ./config/docker/docker-entrypoint.sh
-        environment:
-            - APP_ENV
-            - DATABASE_URL
     nginx:
         image: 4xxi/nginx:flex
         depends_on:
