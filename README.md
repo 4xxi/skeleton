@@ -66,7 +66,7 @@ The list of common Components that may be needed for the project:
 * form
 * security
 * serializer
-* swiftmailer
+* mailer
 * translation
 * twig
 * validator
