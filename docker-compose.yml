@@ -13,8 +13,9 @@ services:
         entrypoint: ./config/docker/php/docker-entrypoint.sh
         environment:
             - COMPOSER_HOME=/var/www/html/var/composer
-            - APP_ENV
             - HOST_UID
+            - PHP_IDE_CONFIG
+            - APP_ENV
     nginx:
         image: 4xxi/nginx:flex
         depends_on:
