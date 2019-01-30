@@ -12,7 +12,6 @@ in 4xxi for developing majority of the projects. It contains bare Symfony Skelet
     * MonologBundle
     * Sensiolabs SecurityChecker
 * A set of bundles and tools that are necessary for development
-    * [Maker Bundle](https://symfony.com/doc/current/bundles/SymfonyMakerBundle/index.html)
     * [PHP CS Fixer](https://cs.sensiolabs.org/)
     * [Deployer](https://deployer.org/)
     * Debug Pack (Debug + Profiler + Dumper)
