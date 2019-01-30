@@ -5,11 +5,16 @@ services:
         build: ./config/docker/php
         depends_on:
             - db
+        working_dir: /var/www/html
         volumes:
             - .:/var/www/html
         expose:
             - "9000"
-        entrypoint: ./config/docker/docker-entrypoint.sh
+        entrypoint: ./config/docker/php/docker-entrypoint.sh
+        environment:
+            - COMPOSER_HOME=/var/www/html/var/composer
+            - APP_ENV
+            - HOST_UID
     nginx:
         image: 4xxi/nginx:flex
         depends_on:
@@ -20,9 +25,9 @@ services:
             - .:/var/www/html
             - ./var/log:/var/log/nginx
     db:
-        image: postgres:9
+        image: postgres:9.6
         ports:
-            - "5432:5432"
+            - "${POSTGRES_EXTERNAL_PORT}:5432"
         volumes:
             - db:/var/lib/postgresql/data
         environment:

@@ -1,1 +1,9 @@
-.idea
+.idea/
+
+# Make .env untracked and follow old rules of .env files:
+# - .env.dist file contains example values
+# - .env file is used for project and for docker-compose as well
+# The reason of it is docker look into .env file for variables used in config
+# and will not check .env.local, .env.${ENV} etc.
+# Also we cannot configure docker-compose to get variables from files different from .env
+.env
