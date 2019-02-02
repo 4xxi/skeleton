@@ -6,11 +6,7 @@ if [[ "prod" = "${APP_ENV}" ]]; then
     COMMAND="${COMMAND} --no-dev  --optimize-autoloader --classmap-authoritative"
 fi
 
-if [[ ! -z "${HOST_UID}" ]]; then
-    deluser www-data
-    addgroup www-data
-    adduser -u ${HOST_UID} -G www-data -H -s /bin/sh -D www-data
-
+if [[ ! -z "${WWW_DATA_UID}" ]]; then
     su \
         -c "${COMMAND}" \
         -s /bin/sh \
