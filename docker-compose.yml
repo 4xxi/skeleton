@@ -1,4 +1,4 @@
-version: '3.2'
+version: '3.7'
 
 services:
     php:
@@ -37,5 +37,11 @@ services:
             - POSTGRES_DB
             - POSTGRES_USER
             - POSTGRES_PASSWORD
+    mailhog:
+        image: mailhog/mailhog
+        ports:
+        - "1025:1025"
+        - "8025:8025"
+
 volumes:
     db:
