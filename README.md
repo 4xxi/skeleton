@@ -13,7 +13,8 @@ in 4xxi for developing majority of the projects. It contains bare Symfony Skelet
     * Sensiolabs SecurityChecker
 * A set of bundles and tools that are necessary for development
     * [PHP CS Fixer](https://cs.sensiolabs.org/)
-    * [Deployer](https://deployer.org/)
+    * [Psalm](https://psalm.dev/docs/)
+    * [PhpUnit](https://symfony.com/doc/current/testing.html)
     * Debug Pack (Debug + Profiler + Dumper)
 * Docker Compose and Docker Sync configs optimized for development under Linux and MacOS
 * Deployer config
@@ -42,13 +43,6 @@ on Linux and MacOS.
   `config/docker/php/Dockerfile`.
 * Optional: Add additinal services (like Redis, RabbitMQ, Elasticsearch) in docker-compose.yml.
 
-### Deployer
-Deployer is pre-configured for Symfony Flex directory structure and deployment flow used in 4xxi. The only things that 
-are left for manual configuration are repository settings and deploy targets:
-
-* Update `deploy.php` with proper project name and repository configuration.
-* Update `config/deployer/hosts.yaml` with proper configuration for deployment targets.
-
 ### Add Bundles and dependencies that are required by our project
 Projects created by Flex include only the mininum amount of dependencies by default. Most of additional components that 
 were previously a part of Symfony Standard Edition are not installed, so it is up to you to install them if they are 
@@ -62,14 +56,9 @@ The list of common Components that may be needed for the project:
 
 * api
 * asset
-* form
-* security
-* serializer
-* mailer
-* translation
 * twig
-* validator
 * workflow
+* web-link
 
 ### Update installation instructions
 
