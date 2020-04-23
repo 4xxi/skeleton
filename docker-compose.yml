@@ -23,14 +23,14 @@ services:
         depends_on:
             - php
         ports:
-            - "${EXTERNAL_HTTP_PORT}:80"
+            - "${EXTERNAL_HTTP_PORT-80}:80"
         volumes:
             - .:/var/www/html
             - ./var/log:/var/log/nginx
     db:
         image: postgres:10.6
         ports:
-            - "${EXTERNAL_DB_PORT}:5432"
+            - "${EXTERNAL_DB_PORT-5432}:5432"
         volumes:
             - db:/var/lib/postgresql/data
         environment:
