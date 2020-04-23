@@ -3,7 +3,7 @@ version: '3.7'
 services:
     php:
         build:
-            context: ./config/docker/php
+            context: ./config/docker/dev
             args:
                 - HOST_UID=${HOST_UID}
         depends_on:
@@ -13,7 +13,7 @@ services:
             - .:/var/www/html
         expose:
             - "9000"
-        entrypoint: ./config/docker/php/docker-entrypoint.sh
+        entrypoint: ./config/docker/dev/docker-entrypoint.sh
         environment:
             - COMPOSER_HOME=/var/www/html/var/composer
             - PHP_IDE_CONFIG
