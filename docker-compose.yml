@@ -30,13 +30,13 @@ services:
     db:
         image: postgres:10.6
         ports:
-            - "${EXTERNAL_POSTGRES_PORT}:5432"
+            - "${EXTERNAL_DB_PORT}:5432"
         volumes:
             - db:/var/lib/postgresql/data
         environment:
-            - POSTGRES_DB
-            - POSTGRES_USER
-            - POSTGRES_PASSWORD
+            - DB_NAME
+            - DB_USER
+            - DB_PASSWORD
     mailhog:
         image: mailhog/mailhog
         ports:

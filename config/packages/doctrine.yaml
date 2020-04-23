@@ -3,14 +3,20 @@ parameters:
     # This allows you to run cache:warmup even if your
     # environment variables are not available yet.
     # You should not need to change this value.
-    env(DATABASE_URL): ''
+    env(DB_NAME): ''
+    env(DB_USER): ''
+    env(DB_PASSWORD): ''
+    env(DB_HOST): ''
 
 doctrine:
     dbal:
         driver: 'pdo_pgsql'
         server_version: '10.6'
 
-        url: '%env(DATABASE_URL)%'
+        dbname: '%env(DB_NAME)%'
+        user: '%env(DB_USER)%'
+        password: '%env(DB_PASSWORD)%'
+        host: '%env(DB_HOST)%'
     orm:
         auto_generate_proxy_classes: '%kernel.debug%'
         naming_strategy: doctrine.orm.naming_strategy.underscore
