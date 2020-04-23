@@ -17,7 +17,6 @@ in 4xxi for developing majority of the projects. It contains bare Symfony Skelet
     * [PhpUnit](https://symfony.com/doc/current/testing.html)
     * Debug Pack (Debug + Profiler + Dumper)
 * Docker Compose and Docker Sync configs optimized for development under Linux and MacOS
-* Deployer config
 * Template for README.md with installation instructions
 
 Creating new project 
@@ -78,6 +77,8 @@ your project.
 ## Configuration
 
 Application configuration is stored in `.env` file. 
+
+Run `cp .env.dist .env` to apply the default configuration for local installations.
 
 ### HTTP port
 If you have nginx or apache installed and using 80 port on host system you can either stop them before proceeding or 
