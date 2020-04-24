@@ -30,7 +30,8 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.14",
         "vimeo/psalm": "^3.8",
-        "weirdan/doctrine-psalm-plugin": "^0.8.0"
+        "weirdan/doctrine-psalm-plugin": "^0.8.0",
+        "phpstan/phpstan": "^0.12"
     },
     "flex-require-dev": {
         "symfony/debug-pack": "*",
