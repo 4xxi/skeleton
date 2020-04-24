@@ -19,6 +19,7 @@ services:
             - COMPOSER_HOME=/var/www/html/var/composer
             - PHP_IDE_CONFIG
             - APP_ENV
+            - SYMFONY_PHPUNIT_VERSION
     nginx:
         image: 4xxi/nginx:flex
         depends_on:
