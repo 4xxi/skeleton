@@ -6,7 +6,7 @@
 It's main idea is to keep simplicity of official Skeleton, while adding must-have dependencies and default configs used
 in 4xxi for developing majority of the projects. It contains bare Symfony Skeleton with the following additions:
 
-* A minimal set of must have bundles for production environment
+* A minimal set of must-have bundles for production environment
     * ORM Pack (Doctrine + Migrations)
     * FrameworkExtraBundle (Annotations)
     * MonologBundle
@@ -14,6 +14,7 @@ in 4xxi for developing majority of the projects. It contains bare Symfony Skelet
 * A set of bundles and tools that are necessary for development
     * [PHP CS Fixer](https://cs.sensiolabs.org/)
     * [Psalm](https://psalm.dev/docs/)
+    * [PhpStan](https://phpstan.org/user-guide/getting-started)
     * [PhpUnit](https://symfony.com/doc/current/testing.html)
     * Debug Pack (Debug + Profiler + Dumper)
 * Docker Compose and Docker Sync configs optimized for development under Linux and MacOS

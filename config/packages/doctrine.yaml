@@ -11,7 +11,7 @@ parameters:
 doctrine:
     dbal:
         driver: 'pdo_pgsql'
-        server_version: '10.6'
+        server_version: '12.2'
 
         dbname: '%env(DB_NAME)%'
         user: '%env(DB_USER)%'
