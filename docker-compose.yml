@@ -3,7 +3,8 @@ version: '3.7'
 services:
     php:
         build:
-            context: ./config/docker/dev
+            context: ./
+            dockerfile: dev.Dockerfile
             args:
                 - HOST_UID=${HOST_UID}
         depends_on:
@@ -34,9 +35,9 @@ services:
         volumes:
             - db:/var/lib/postgresql/data
         environment:
-            - DB_NAME
-            - DB_USER
-            - DB_PASSWORD
+            - POSTGRES_DB="${DB_NAME-dev}"
+            - POSTGRES_USER="${DB_USER-dev}"
+            - POSTGRES_PASSWORD="${DB_PASSWORD-dev}"
     mailhog:
         image: mailhog/mailhog
         ports:

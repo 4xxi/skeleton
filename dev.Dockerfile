@@ -38,4 +38,4 @@ ENV WWW_DATA_UID ${HOST_UID}
 
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 
-COPY ./symfony.pool.conf /usr/local/etc/php-fpm.d/
+COPY ./config/docker/dev/symfony.pool.conf /usr/local/etc/php-fpm.d/
