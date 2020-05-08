@@ -42,8 +42,8 @@ services:
     mailhog:
         image: mailhog/mailhog
         ports:
-        - "1025:1025"
-        - "8025:8025"
+        - "${EXTERNAL_SMTP_PORT-8025}:1025"
+        - "${EXTERNAL_SMTP_WEB_PORT-8025}:8025"
 
 volumes:
     db:
