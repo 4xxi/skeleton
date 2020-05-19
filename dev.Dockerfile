@@ -1,4 +1,4 @@
-FROM php:7.3-fpm-alpine
+FROM php:7.4-fpm-alpine
 
 RUN apk add --no-cache \
     git \
@@ -14,17 +14,11 @@ RUN docker-php-ext-install \
     pdo_pgsql \
     zip
 
-# Uncomment code below for enabling xDebug
-# or delete it with the xdebug.ini file
-
-#RUN apk add --no-cache --virtual .xdebug-build-deps ${PHPIZE_DEPS} \
-#	&& pecl install xdebug \
-#	&& docker-php-ext-enable xdebug \
-#	&& apk del .xdebug-build-deps
-#
-#COPY xdebug.ini /usr/local/etc/php/xdebug.ini
-#
-#RUN cat /usr/local/etc/php/xdebug.ini >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+ARG XDEBUG=yes
+RUN if [ "${XDEBUG}" = "yes" ]; then apk add --no-cache --virtual .xdebug-build-deps ${PHPIZE_DEPS} \
+    && pecl install xdebug \
+    && docker-php-ext-enable xdebug \
+    && apk del .xdebug-build-deps; fi;
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
@@ -42,5 +36,6 @@ RUN if [ ! -z "${HOST_UID}" ]; then \
 
 ENV WWW_DATA_UID ${HOST_UID}
 
-COPY ./symfony.ini /usr/local/etc/php/conf.d/
-COPY ./symfony.pool.conf /usr/local/etc/php-fpm.d/
+RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
+
+COPY ./config/docker/dev/symfony.pool.conf /usr/local/etc/php-fpm.d/
