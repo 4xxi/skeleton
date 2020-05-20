@@ -36,9 +36,9 @@ services:
         volumes:
             - db:/var/lib/postgresql/data
         environment:
-            - POSTGRES_DB="${DB_NAME-dev}"
-            - POSTGRES_USER="${DB_USER-dev}"
-            - POSTGRES_PASSWORD="${DB_PASSWORD-dev}"
+            - POSTGRES_DB=${DB_NAME-dev}
+            - POSTGRES_USER=${DB_USER-dev}
+            - POSTGRES_PASSWORD=${DB_PASSWORD-dev}
     mailhog:
         image: mailhog/mailhog
         ports:
