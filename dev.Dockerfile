@@ -20,11 +20,10 @@ RUN if [ "${XDEBUG}" = "yes" ]; then apk add --no-cache --virtual .xdebug-build-
     && docker-php-ext-enable xdebug \
     && apk del .xdebug-build-deps; fi;
 
-COPY --from=composer /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_MEMORY_LIMIT -1
-RUN composer global require hirak/prestissimo --no-plugins --no-scripts
 
 ARG HOST_UID
 
